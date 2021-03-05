@@ -3,10 +3,11 @@ import Letter, { LetterState } from './Letter'
 import { isLegal, isChineseSymbol } from '../../utils/utils'
 import useSounds from 'hooks/useSounds'
 import style from './index.module.css'
-import usePronunciationSound from 'hooks/usePronouncation'
+import usePronunciationSound from 'hooks/usePronunciation'
 
 const Word: React.FC<WordProps> = ({ word = 'defaultWord', onFinish, isStart, wordVisible = true }) => {
   word = word.replace(new RegExp(' ', 'g'), '_')
+  word = word.replace(new RegExp('…', 'g'), '..')
 
   const [inputWord, setInputWord] = useState('')
   const [statesList, setStatesList] = useState<LetterState[]>([])
