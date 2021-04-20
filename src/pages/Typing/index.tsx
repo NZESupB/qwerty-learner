@@ -8,7 +8,7 @@ import Modals from 'components/Modals'
 import Loading from 'components/Loading'
 import Phonetic from 'components/Phonetic'
 import PronunciationSwitcher from './PronunciationSwitcher'
-import { isLegal } from 'utils/utils'
+import { isLegal, IsDesktop } from 'utils/utils'
 import { useHotkeys } from 'react-hotkeys-hook'
 import { useModals } from 'hooks/useModals'
 import useSwitcherState from './hooks/useSwitcherState'
@@ -47,6 +47,17 @@ const App: React.FC = () => {
     setHandler: setModalHandler,
   } = useModals(false, '提示')
 
+  useEffect(() => {
+    // 检测用户设备
+    if (!IsDesktop()) {
+      setTimeout(() => {
+        alert(
+          ' Qwerty Learner 目的为提高键盘工作者的英语输入效率，目前暂未适配移动端，希望您使用桌面端浏览器访问。如您使用的是 Ipad 等平板电脑设备，可以使用外接键盘使用本软件。',
+        )
+      }, 500)
+    }
+  }, [])
+
   useHotkeys(
     'enter',
     () => {
@@ -63,7 +74,9 @@ const App: React.FC = () => {
         if (isStart) {
           setInputCount((count) => count + 1)
         } else {
-          setIsStart(true)
+          if (document.activeElement?.nodeName === 'BODY') {
+            setIsStart(true)
+          }
         }
       }
     }
@@ -72,12 +85,18 @@ const App: React.FC = () => {
         setIsStart(false)
       }
     }
+    const hjOnclick = () => {
+      setIsStart(false)
+    }
 
     window.addEventListener('blur', onBlur)
     window.addEventListener('keydown', onKeydown)
+    document.getElementsByClassName('_hj_feedback_container')[0]?.addEventListener('click', hjOnclick)
+
     return () => {
       window.removeEventListener('keydown', onKeydown)
       window.removeEventListener('blur', onBlur)
+      document.getElementsByClassName('_hj_feedback_container')[0]?.removeEventListener('click', hjOnclick)
     }
   }, [isStart])
 

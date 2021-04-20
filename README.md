@@ -1,3 +1,7 @@
+<div align=center>
+<img  src="src/assets/logo.svg"/>
+</div>
+
 <h1 align="center">
   Qwerty Learner
 </h1>
@@ -14,12 +18,12 @@
 </p>
 
 <div align=center>
-<img  src="https://github.com/Kaiyiwing/qwerty-learner/blob/master/docs/Screenshot.png"/>
+<img  src="docs/Screenshot.png"/>
 </div>
 
 ## 📸 在线访问
 
-Vercel: https://qwerty-learner.vercel.app/ ，https://qwerty.kaiyi.cool/  
+Vercel: https://qwerty.kaiyi.cool/ , https://qwerty-learner.vercel.app/  
 GitHub Pages: https://kaiyiwing.github.io/qwerty-learner/  
 Gitee Pages: https://kaiyiwing.gitee.io/qwerty-learner/
 
@@ -120,6 +124,7 @@ Gitee Pages: https://kaiyiwing.gitee.io/qwerty-learner/
 - JavaScript API. [@sdu-gyf](https://github.com/sdu-gyf)
 - Node.js API. [@chrysalis1215](https://github.com/chrysalis1215)
 - Java API. [@darkSheep](https://github.com/SFAfreshman)
+- Linux Command. [@归谜](https://github.com/vhxubo)
 
 目前 API 相关词库主要依赖于社区贡献，如果您想贡献自己需要的 API 词库，建议参考 [Issue #42](https://github.com/Kaiyiwing/qwerty-learner/issues/40) [pr #67](https://github.com/Kaiyiwing/qwerty-learner/pull/67) 贡献词典。
 
@@ -196,6 +201,10 @@ Gitee Pages: https://kaiyiwing.gitee.io/qwerty-learner/
 
 JS API 来自于[react-code-game](https://github.com/webzhd/react-code-game) ，感谢项目对 JS API 的爬取与预处理。
 <br/><br/>
+
+### 项目 Icon
+
+感谢[libregd](https://github.com/libregd)提供图标设计，给项目贡献了多个好看的图标设计方案，同时也在项目的进行中提供了设计、建议、未来规划等诸多支持
 
 ### 感谢支持
 
